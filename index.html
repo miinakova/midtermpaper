@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mid-Term Paper Inspiration</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #2E8B57;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .option-btn {
+            padding: 15px 30px;
+            margin: 20px;
+            background-color: #2E8B57;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .option-btn:hover {
+            background-color: #4CAF50;
+            transform: scale(1.05);
+        }
+
+        .option-btn:active {
+            transform: scale(0.95);
+            background-color: #228B22;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        #result.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .credit {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #555;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Get Inspired for Your Mid-Term Paper</h1>
+    <p>Choose your area of interest:</p>
+
+    <button class="option-btn" onclick="generateIdea('climate')">Climate Science</button>
+    <button class="option-btn" onclick="generateIdea('disaster')">Development/Disaster</button>
+
+    <div id="result"></div>
+
+    <div class="credit">
+        Made by Daria Minakova, Course Assistant for Climate Change, Energy and Development, Fall 2024.
+    </div>
+
+    <script>
+        const climateIdeas = [
+            "Analyze the effects of the 2020 California wildfires on local air quality and public health.",
+            "Explore how melting permafrost in Siberia contributes to methane release and global climate patterns.",
+            "Examine the role of coral reef destruction on ocean biodiversity and how it ties to carbon emissions.",
+            "Investigate how deforestation in the Amazon is exacerbating climate change and impacting indigenous populations.",
+            "Study the influence of Arctic sea ice loss on global weather patterns and its effects on shipping routes.",
+            "Review the impact of prolonged droughts in Sub-Saharan Africa on agricultural productivity and development.",
+            "Explore how desertification in the Sahel region is linked to climate change and population displacement.",
+            "Discuss the relationship between ocean acidification and declining fish populations in the Pacific.",
+            "Analyze the impact of extreme heat waves on energy consumption in Southern Europe.",
+            "Investigate how the Greenland ice sheet melting contributes to sea-level rise and coastal flooding risks in New York."
+        ];
+
+        const disasterIdeas = [
+            "Analyze the 2023 Maui wildfires and how land use policies contributed to the disaster’s severity.",
+            "Discuss the impact of Hurricane Maria on Puerto Rico’s infrastructure and how the island's colonial history played a role in disaster recovery.",
+            "Examine how the 2011 Fukushima nuclear disaster affected Japan's energy policies and its approach to climate change.",
+            "Explore the connection between urbanization and increased flood risks in Jakarta, Indonesia.",
+            "Review how the California wildfires of 2018 were exacerbated by historical land management practices and drought.",
+            "Investigate how Haiti's development history intensified the effects of the 2021 earthquake.",
+            "Discuss how the Chennai floods of 2015 were influenced by poor urban planning and climate change.",
+            "Analyze the effects of the Australian Black Summer wildfires of 2019-2020 on rural communities and wildlife.",
+            "Explore how Typhoon Haiyan (2013) highlighted the vulnerability of the Philippines due to its development and coastal policies.",
+            "Study how the 2005 Pakistan earthquake reshaped the country's development trajectory in mountainous regions."
+        ];
+
+        function generateIdea(type) {
+            let idea = '';
+            if (type === 'climate') {
+                idea = climateIdeas[Math.floor(Math.random() * climateIdeas.length)];
+            } else if (type === 'disaster') {
+                idea = disasterIdeas[Math.floor(Math.random() * disasterIdeas.length)];
+            }
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `Your Mid-Term Paper Idea: ${idea}`;
+            resultDiv.classList.add('show');
+        }
+    </script>
+
+</body>
+</html>
